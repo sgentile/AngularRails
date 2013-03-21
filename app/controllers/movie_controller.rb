@@ -25,4 +25,12 @@ class MovieController < ApplicationController
     @movie.save
     respond_with(@movie)
   end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    respond_to do |format|
+      format.json  { head :ok }
+    end
+  end
 end
