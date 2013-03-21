@@ -1,3 +1,3 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :name, :seen
+  attr_accessible :name, :seen, :description
 end

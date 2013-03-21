@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Movie.delete_all #clear the data to re-seed
-Movie.create([{name: 'Big Bang Theory', seen: true}, {name: 'Breaking Bad', seen: false}])
+Movie.create([
+             {name: 'Iron Man 3', seen: true, description: 'Iron Man against an enemy whose reach knows no bounds'},
+             {name: 'Men in Black', seen: false, description: 'top-secret organization established to monitor and police alien activity on Earth'}])
