@@ -1,0 +1,14 @@
+<form name="addMovieForm">
+	<fieldset>
+		<legend>Add a Movie</legend>
+		<label>Name:</label>
+		<input name="moviename" type="text" placeholder="Type the Movie Name..." ng-model="movie.name" required/>
+		<span ng-show="addMovieForm.moviename.$error.required" class="help-inline">Required</span>
+		<label>Description</label>
+		<input class="input-xxlarge" type="text" ng-model='movie.description'/>
+		<label class="checkbox">
+			<input type="checkbox" ng-model="movie.seen">Have you seen it yet?
+		</label>
+		<button type="submit" class="btn btn-primary" ng-click="create(movie)" ng-disabled="addMovieForm.$invalid">Submit</button>
+	</fieldset>
+</form>

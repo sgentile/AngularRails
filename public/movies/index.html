@@ -1,0 +1,16 @@
+<table class="table table-condensed table-hover">
+	<caption>Movies</caption>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="movie in movies">
+			<td><a href="#/movies/{{movie.id}}">{{movie.name}}</a></td>
+			<td>{{movie.description}}</td>
+		</tr>
+	</tbody>
+</table>
+

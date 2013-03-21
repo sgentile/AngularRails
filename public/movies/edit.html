@@ -1,0 +1,15 @@
+<form name="editMovieForm">
+	<fieldset>
+		<legend>Edit {{master.name}}</legend>
+		<label>Name<label>
+		<input name="moviename" type="text" placeholder="Enter movie name..." ng-model='movie.name' required/>
+		<span ng-show="editMovieForm.moviename.$error.required" class="help-inline">Required</span>
+		<label>Description</label>
+		<input class="input-xxlarge" type="text" ng-model='movie.description'/>
+		<label class="checkbox">
+			<input type="checkbox" ng-model='movie.seen'/>Have you seen this movie yet?
+		</label>
+		<button type="submit" class="btn btn-primary" ng-click='update(movie)' ng-disabled="editMovieForm.$invalid">Update Movie</button>
+	</fieldset>
+</form>
+<a href="#/movies/{{movie.id}}">Back</a>
