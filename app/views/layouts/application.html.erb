@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html ng-app="AngularRails">
-<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AngularRails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 
-  <div ng-view></div>  
+    <div class="navbar navbar-fluid-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Angular Rails Movie Demo</a>
+          <!--
+         <div class="container-fluid nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "All", "/#movies"  %></li>
+               <li><%= link_to "Add", "/#movies/add"  %></li>
 
-</body>
+            </ul>
+          </div>
+          -->
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Quick Links</li>
+              <li><%= link_to "All Movies", "/#movies"  %></li>
+              <li><%= link_to "Add a Movie", "/#movies/add"  %></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <%= bootstrap_flash %>
+          <div ng-view></div>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Steve Gentile 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
+
 </html>
