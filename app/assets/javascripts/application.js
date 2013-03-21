@@ -1,10 +1,11 @@
-//= require angular
 //= require jquery
+//= require angular
+//= require ui-bootstrap
 //= require angular-resource
 //= require services/moviesService
 //= require controllers/movies
 
-angular.module('AngularRails', ['moviesService'])
+angular.module('AngularRails', ['moviesService', 'ui.bootstrap'])
   .config(['$httpProvider', function(provider){
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   }])
