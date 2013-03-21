@@ -11,12 +11,6 @@ class MovieController < ApplicationController
 
   def update 
     @movie = Movie.find(params[:id])
-    #if @movie.update_attributes(params[:movie])
-      #respond.with({head :no_content})
-      
-   # else
-      #respond_with({render json: @movie.errors, status: :unprocessable_entity }
-    #end
     respond_to do |format|
       if @movie.update_attributes(params[:movie])
         format.json { head :no_content }
@@ -24,5 +18,11 @@ class MovieController < ApplicationController
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def create
+    @movie = Movie.new(params[:movie])
+    @movie.save
+    respond_with(@movie)
   end
 end
