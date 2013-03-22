@@ -1,6 +1,6 @@
 //= require jquery
 //= require angular
-//= require ui-bootstrap
+//= require ui-bootstrap-tpls-0.2.0 
 //= require angular-resource
 //= require services/moviesService
 //= require controllers/movies

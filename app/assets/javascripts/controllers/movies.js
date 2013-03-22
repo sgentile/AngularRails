@@ -7,14 +7,14 @@ function MovieShowCtrl($scope, $location, $routeParams, $dialog, Movie){
   $scope.movie = Movie.show({movie_id:$routeParams.movie_id});
 
   $scope.remove = function(id){
-    var title = 'This is a message box';
-    var msg = 'This is the content of the message box';
+    var title = 'Delete Movie?';
+    var msg = 'Are you sure you want to delete this movie?';
     var btns = [{result:'cancel', label: 'Cancel'}, {result:'ok', label: 'OK', cssClass: 'btn-primary'}];
 
     $dialog.messageBox(title, msg, btns)
       .open()
       .then(function(result){
-        if(result === 'OK'){
+        if(result === 'ok'){
           new Movie.destroy({movie_id:id}, function(){
             $location.path('/movies');
           });
