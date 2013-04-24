@@ -1,4 +1,5 @@
-function MoviesCtrl($scope, Movies) {"use strict";
+function MoviesCtrl($scope, Movies) {
+    "use strict";
     $scope.movies = Movies.index();
 }
 
