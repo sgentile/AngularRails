@@ -1,0 +1,29 @@
+#!/bin/sh -e
+
+echo ""
+echo "-------------------"
+echo "Installing Gems"
+echo "-------------------"
+bundle install
+echo ""
+
+echo "-------------------"
+echo "Cleaning Assets"
+echo "-------------------"
+bundle exec rake assets:clean
+echo ""
+
+echo "-------------------"
+echo "Setting up database"
+echo "-------------------"
+bundle exec rake db:reset
+bundle exec rake db:seed
+
+echo ""
+
+echo "-------------------"
+echo "Starting the Server"
+echo "-------------------"
+rails server
+
+
